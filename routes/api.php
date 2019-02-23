@@ -16,3 +16,8 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => 'v1', 'namespace' => 'Api\V1'], function(){
+    Route::post('journey_histories/create', 'JourneyHistoriesController@create');
+    Route::get('journey_histories/{journey_type}/compute_distance', 'JourneyHistoriesController@compute_distance');
+});

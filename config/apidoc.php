@@ -96,8 +96,8 @@ return [
                  * Specify headers to be added to the example requests
                  */
                 'headers' => [
-                    // 'Authorization' => 'Bearer {token}',
-                    // 'Api-Version' => 'v2',
+                     'Authorization' => 'Bearer {auth_token}',
+                     'X-Consumer-Username' => '{username}',
                 ],
 
                 /*
@@ -110,7 +110,7 @@ return [
                      * API calls will be made only for routes in this group matching these HTTP methods (GET, POST, etc).
                      * List the methods here or use '*' to mean all methods. Leave empty to disable API calls.
                      */
-                    'methods' => ['GET'],
+                    'methods' => ['GET', 'POST'],
 
                     /*
                      * For URLs which have parameters (/users/{user}, /orders/{id?}),
@@ -118,7 +118,7 @@ return [
                      * Note that you must specify the full parameter, including curly brackets and question marks if any.
                      */
                     'bindings' => [
-                        // '{user}' => 1
+                         '{journey_type}' => 'walking'
                     ],
 
                     /*
